@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title> List of Places</title>
+    <style>
+
+      img{
+        max-width: 300px;
+      }
+
+    </style>
+</head>
+<body>
+    <h1>I was in:</h1>
+    <p>{{ newplace.getName }}</p>
+    <p><img src="{{ newplace.getPicture }}" /></p>
+    <p>{{ newplace.getTime }}</p>
+    <p><a href='/'>View your list of places.</a></p>
+</body>
+</html>

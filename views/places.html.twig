@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>List of places</title>
+    <style>
+
+      img{
+        max-width: 300px;
+      }
+
+    </style>
+</head>
+<body>
+    <h1>Where was I?</h1>
+    {% if places is not empty %}
+        <p>Here are all the places I have been:</p>
+        <ul>
+            {% for place in places %}
+                <li>{{ place.getName }} <br /> {{ place.getTime }} <br /> <img src="{{ place.getPicture }}" /></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action='/places' method='post'>
+        <label for='name'>What was the name?</label>
+        <input id='name' name='name' type='text'>
+
+        <label for='picture'>What did it look like? Please add an url of an image. </label>
+        <input id='picture' name='picture' type='url'>
+
+        <label for='time'>What year were you there?</label>
+        <input id='time' name='time' type='number'>
+
+        <button type='submit'>Add Place</button>
+    </form>
+
+    <!--
+    <form action='/' method='post'>
+      <label for='remove'>Which one do you want to remove? </label>
+      <input id='remove' name='remove' type='number'>
+
+        <button type='submit'>remove one from list</button>
+    </form>
+    -->
+
+    <form action='/delete_places' method='post'>
+        <button type='submit'>forget I was ever there...</button>
+    </form>
+</body>
+</html>
