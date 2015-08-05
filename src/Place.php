@@ -39,11 +39,11 @@
         static function getAll() {
           return $_SESSION['list_of_place'];
         }
-        /*
+
         static function deleteONE($x) {
           return $_SESSION['list_of_place'] = array_splice($_SESSION['list_of_place'],($x-1) ,1);
         }
-        */
+
         static function deleteAll() {
           $_SESSION['list_of_place'] = array();
         }

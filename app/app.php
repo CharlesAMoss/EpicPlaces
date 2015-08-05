@@ -32,13 +32,15 @@
         Place::deleteAll();
         return $app['twig']->render('delete_places.html.twig');
     });
-    /*
-    $app->post("/", function() {
+
+    $app->post("/", function() use ($app) {
 
       Place::deleteONE($_POST['remove']);
 
+      return $app['twig']->render('places.html.twig', array('places' => Place::getAll()));
+
     });
-    */
+
 
     return $app;
 
